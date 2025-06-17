@@ -13,9 +13,11 @@ import os
 import shutil
 import requests
 import webbrowser
+from flask_cors import CORS
 
 app = Flask(__name__)
 
+CORS(app, origins=["http://localhost:5173", "https://anto.up.railway.app"], supports_credentials=True)
 
 def configurar_navegador():
     chrome_options = Options()
